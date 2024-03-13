@@ -45,12 +45,31 @@ public class SpellingBee {
     //  that will find the substrings recursively.
     public void generate() {
         // YOUR CODE HERE — Call your recursive method!
+        generateWord( letters);
+    }
+    public void generateWord(String letters){
+        generateWord("",letters);
+    }
+    public void generateWord(String currentWord, String letters){
+        words.add(currentWord);
+
+        for (int i = 0; i < letters.length(); i++) {
+            generateWord(currentWord + letters.charAt(i), letters.substring(0, i) + letters.substring(i + 1));
+        }
     }
 
     // TODO: Apply mergesort to sort all words. Do this by calling ANOTHER method
     //  that will find the substrings recursively.
     public void sort() {
         // YOUR CODE HERE
+    }
+
+    public String[] divide(String[] arr){
+        if(arr.length <= 1){
+            return arr;
+        }
+        int med = arr.length/2;
+        divide()
     }
 
     // Removes duplicates from the sorted list.
@@ -69,6 +88,7 @@ public class SpellingBee {
     //  If it is not in the dictionary, remove it from words.
     public void checkWords() {
         // YOUR CODE HERE
+
     }
 
     // Prints all valid words to wordList.txt
